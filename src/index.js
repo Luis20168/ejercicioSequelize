@@ -1,9 +1,13 @@
 import app from "./app.js";
 import { db } from "./database/database.js";
-import routes from "./routes/sena.routes.js"
+
+import routesCurso from "./routes/curso.routes.js"
+import routesAprendiz from "./routes/aprendiz.router.js"
+import routesCompetencias from "./routes/competencia.routes.js"
 
 import "./models/curso.js"
 import "./models/aprendiz.js"
+import "./models/competencia.js"
 
 app.set('port', 3000)
 
@@ -11,8 +15,9 @@ app.set('port', 3000)
 
 
 
-
-app.use('/apdz', routes);
+app.use('/apdz', routesAprendiz)
+app.use('/cursos', routesCurso);
+app.use('/competencia', routesCompetencias);
 
 
 
