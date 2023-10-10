@@ -31,7 +31,7 @@ app.listen(app.get('port'), ()=>{
 
 try {
     await db.authenticate();
-    await db.sync({force: false});
+    await db.sync({force: true});
     console.log('db conected')
 } catch (error) {
     console.log(error);
