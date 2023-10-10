@@ -5,10 +5,13 @@ import routesCurso from "./routes/curso.routes.js"
 import routesAprendiz from "./routes/aprendiz.router.js"
 import routesCompetencias from "./routes/competencia.routes.js"
 
+
 import "./models/curso.js"
 import "./models/aprendiz.js"
 import "./models/competencia.js"
-
+import "./models/resultados.js"
+import "./models/instructor.js";
+import "./models/curso_instructor.js";
 app.set('port', 3000)
 
 
@@ -31,7 +34,7 @@ app.listen(app.get('port'), ()=>{
 
 try {
     await db.authenticate();
-    await db.sync({force: true});
+    await db.sync({force: false});
     console.log('db conected')
 } catch (error) {
     console.log(error);
